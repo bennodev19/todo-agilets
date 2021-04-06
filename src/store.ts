@@ -20,7 +20,6 @@ export const updateTodo = (id: number, text: string): void => {
 };
 
 export const toggleTodo = (id: number): void => {
-  console.log("toggle");
   MY_TODOS.update(id, { done: true });
 };
 
@@ -42,6 +41,4 @@ export const addTodo = (text: string): void => {
     [],
     { method: "unshift" }
   );
-
-  console.log(MY_TODOS);
 };
