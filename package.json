@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@agile-ts/core": "0.0.13",
-    "@agile-ts/react": "0.0.14",
+    "@agile-ts/api": "file:.yalc/@agile-ts/api",
+    "@agile-ts/core": "file:.yalc/@agile-ts/core",
+    "@agile-ts/react": "file:.yalc/@agile-ts/react",
     "@chakra-ui/react": "^1.0.0",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
@@ -27,7 +28,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analize": "node scripts/analize.js",
+    "install:prod:agile": "yarn add @agile-ts/core @agile-ts/react @agile-ts/api & yarn install",
+    "install:dev:agile": "yalc add @agile-ts/core @agile-ts/react @agile-ts/api & yarn install"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack-bundle-analyzer": "^4.4.2"
   }
 }

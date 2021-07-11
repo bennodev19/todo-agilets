@@ -1,6 +1,5 @@
 // Standard interface and functions
-import { Agile, globalBind, Logger } from "@agile-ts/core";
-import reactIntegration from "@agile-ts/react";
+import { Agile, globalBind } from "@agile-ts/core";
 
 export interface TodoInterface {
   id: number;
@@ -8,9 +7,7 @@ export interface TodoInterface {
   done: boolean;
 }
 
-const App = new Agile({ logConfig: { level: Logger.level.DEBUG } }).integrate(
-  reactIntegration
-);
+const App = new Agile();
 export const MY_TODOS = App.createCollection<TodoInterface>({
   key: "todos",
 }).persist();
@@ -42,3 +39,8 @@ export const addTodo = (text: string): void => {
     { method: "unshift" }
   );
 };
+
+globalBind("__core__", {
+  App,
+  MY_TODOS,
+});

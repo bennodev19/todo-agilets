@@ -4,7 +4,7 @@ import { useAgile } from "@agile-ts/react";
 import { MY_TODOS, removeTodo, toggleTodo, updateTodo } from "../store";
 
 function TodoListItems() {
-  const todos = useAgile(MY_TODOS.getGroupWithReference("default"));
+  const todos = useAgile(MY_TODOS);
 
   return (
     <>
